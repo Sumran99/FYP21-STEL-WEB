@@ -1,5 +1,5 @@
-import "./adddriver.css"
-import React  from "react";
+import "./adddriver.css";
+import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -24,11 +24,11 @@ export default function AddDriver() {
       yearOfExp: "",*/
     },
   });
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `/dashboard`; 
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/dashboard`;
     navigate(path);
-  }
+  };
 
   return (
     <div className="BOX">
@@ -40,11 +40,10 @@ export default function AddDriver() {
             display: "flex",
             flexGrow: 1,
             minHeight: "100%",
-            justifyContent: 'flex-start',
-          
+            justifyContent: "flex-start",
           }}
         >
-          <Container maxWidth="sm"  >
+          <Container maxWidth="sm">
             <Button
               component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
@@ -123,7 +122,7 @@ export default function AddDriver() {
                 value={formik.values.yearOfExp}
                 variant="outlined"
               />
-              
+
               <Box sx={{ py: 2 }}>
                 <Button
                   color="primary"
@@ -132,10 +131,20 @@ export default function AddDriver() {
                   size="large"
                   type="submit"
                   variant="contained"
-                  onClick={()=>{
-                    console.log(JSON.stringify(formik.values))
-                    alert("Saved")
-                    routeChange()
+                  onClick={() => {
+                    console.log(JSON.stringify(formik.values));
+                    fetch("/api/admin/addDriver", {
+                      method: "post",
+                      headers: {
+                        Accept: "application/json",
+                        "Content-type": "application/json",
+                      },
+                      // (var) payload looks like this {Header: "Sending", . . .}
+                      body: JSON.stringify(formik.values),
+                    })
+                      .then((res) => res.json())
+                      .then((resp) => console.log(resp))
+                      .catch((err) => console.log(err));
                   }}
                 >
                   Add Driver
