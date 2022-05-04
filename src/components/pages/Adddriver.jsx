@@ -20,7 +20,7 @@ export default function AddDriver() {
       /*name: "",
       phone: "",
       cnic: "",
-      lisense: "",
+      license: "",
       yearOfExp: "",*/
     },
   });
@@ -99,19 +99,19 @@ export default function AddDriver() {
                 variant="outlined"
               />
               <TextField
-                error={Boolean(formik.touched.lisense && formik.errors.lisense)}
+                error={Boolean(formik.touched.license && formik.errors.license)}
                 fullWidth
-                helperText={formik.touched.lisense && formik.errors.lisense}
-                label="Lisense Number"
+                helperText={formik.touched.license && formik.errors.license}
+                label="License Number"
                 margin="normal"
-                name="lisense"
+                name="license"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
-                value={formik.values.lisense}
+                value={formik.values.license}
                 variant="outlined"
               />
               <TextField
-                error={Boolean(formik.touched.lisense && formik.errors.lisense)}
+                error={Boolean(formik.touched.license && formik.errors.license)}
                 fullWidth
                 helperText={formik.touched.yearOfExp && formik.errors.yearOfExp}
                 label="Year of experience"
