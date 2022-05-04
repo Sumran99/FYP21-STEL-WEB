@@ -23,13 +23,6 @@ export default function AddDriver() {
       lisense: "",
       yearOfExp: "",*/
     },
-    validationSchema: Yup.object({
-      name: Yup.number().max(255).required("Name is required"),
-      phone: Yup.string().max(255).required("Phone Number is required"),
-      cnic: Yup.number().max(13).required("CNIC is required"),
-      lisense: Yup.string().required("Lisense Number is required"),
-      yearOfExp: Yup.number().required("Experience is required"),
-    }),
   });
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
@@ -37,8 +30,6 @@ export default function AddDriver() {
     navigate(path);
   }
 
-
-  
   return (
     <div className="BOX">
       <>
@@ -76,7 +67,7 @@ export default function AddDriver() {
                 helperText={formik.touched.name && formik.errors.name}
                 label="Name"
                 margin="normal"
-                name="Driver Name"
+                name="name"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.name}
@@ -89,7 +80,7 @@ export default function AddDriver() {
                 helperText={formik.touched.phone && formik.errors.phone}
                 label="Phone"
                 margin="normal"
-                name="Phone Number"
+                name="phone"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.phone}
@@ -101,7 +92,7 @@ export default function AddDriver() {
                 helperText={formik.touched.cnic && formik.errors.cnic}
                 label="CNIC"
                 margin="normal"
-                name="CNIC"
+                name="cnic"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.cnic}
@@ -113,7 +104,7 @@ export default function AddDriver() {
                 helperText={formik.touched.lisense && formik.errors.lisense}
                 label="Lisense Number"
                 margin="normal"
-                name="Lisense Number"
+                name="lisense"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 value={formik.values.lisense}
@@ -125,7 +116,7 @@ export default function AddDriver() {
                 helperText={formik.touched.yearOfExp && formik.errors.yearOfExp}
                 label="Year of experience"
                 margin="normal"
-                name="Year of Experience"
+                name="experience"
                 onBlur={formik.handleBlur}
                 onChange={formik.handleChange}
                 type="number"
@@ -141,7 +132,11 @@ export default function AddDriver() {
                   size="large"
                   type="submit"
                   variant="contained"
-                  onClick={()=>{console.log(JSON.stringify(formik.values))}}
+                  onClick={()=>{
+                    console.log(JSON.stringify(formik.values))
+                    alert("Saved")
+                    routeChange()
+                  }}
                 >
                   Add Driver
                 </Button>
