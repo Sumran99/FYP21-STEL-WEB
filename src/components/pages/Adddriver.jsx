@@ -17,11 +17,11 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 export default function AddDriver() {
   const formik = useFormik({
     initialValues: {
-      name: "",
+      /*name: "",
       phone: "",
       cnic: "",
       lisense: "",
-      yearOfExp: "",
+      yearOfExp: "",*/
     },
     validationSchema: Yup.object({
       name: Yup.number().max(255).required("Name is required"),
@@ -132,28 +132,7 @@ export default function AddDriver() {
                 value={formik.values.yearOfExp}
                 variant="outlined"
               />
-              <Box
-                sx={{
-                  alignItems: "center",
-                  display: "flex",
-                  ml: -1,
-                }}
-              >
-                <Checkbox
-                  checked={formik.values.policy}
-                  name="policy"
-                  onChange={formik.handleChange}
-                />
-                <Typography color="textSecondary" variant="body2">
-                  I have read the{" "}
-                  <Link color="primary" underline="always" variant="subtitle2">
-                    Terms and Conditions
-                  </Link>
-                </Typography>
-              </Box>
-              {Boolean(formik.touched.policy && formik.errors.policy) && (
-                <FormHelperText error>{formik.errors.policy}</FormHelperText>
-              )}
+              
               <Box sx={{ py: 2 }}>
                 <Button
                   color="primary"
@@ -162,6 +141,7 @@ export default function AddDriver() {
                   size="large"
                   type="submit"
                   variant="contained"
+                  onSubmit={console.log(JSON.stringify(formik.values))}
                 >
                   Add Driver
                 </Button>
