@@ -141,7 +141,7 @@ export default function AddDriver() {
                   size="large"
                   type="submit"
                   variant="contained"
-                  onSubmit={console.log(JSON.stringify(formik.values))}
+                  onClick={()=>{console.log(JSON.stringify(formik.values))}}
                 >
                   Add Driver
                 </Button>
