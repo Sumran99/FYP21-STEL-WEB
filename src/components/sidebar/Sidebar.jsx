@@ -34,10 +34,12 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sideTitle">Bus</h3>
           <ul className="sidebarList">
+          <Link style={{ textDecoration: 'none', color: 'grey' }}to="/src/components/pages/AddBus.jsx">
             <li className="sidebarListItem">
               <AddIcon className="sidebaricon" />
               Add Bus
             </li>
+            </Link>
             <li className="sidebarListItem">
               <DeleteIcon className="sidebaricon" />
               Remove Bus
