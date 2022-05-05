@@ -133,7 +133,7 @@ export default function AddDriver() {
                   variant="contained"
                   onClick={() => {
                     console.log(JSON.stringify(formik.values));
-                    fetch("/api/admin/addDriver", {
+                    fetch("/api/driver/addDriver", {
                       method: "post",
                       headers: {
                         Accept: "application/json",
