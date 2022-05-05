@@ -7,7 +7,7 @@ import Topbar from "./components/topbar/Topbar";
 import Adddriver from "./components/pages/Adddriver";
 import UpdateDriver from "./components/pages/UpdateDriver.jsx";
 import RemoveDriver from "./components/pages/RemoveDriver";
-import AddBus from"./components/pages/AddBus";
+import AddBus from "./components/pages/AddBus";
 
 function App() {
   return (
@@ -17,11 +17,9 @@ function App() {
         <Sidebar />
         <Routes>
           <Route exact path="/adddriver" element={<Adddriver />} />
-
           <Route path="/updatedriver" element={<UpdateDriver />} />
-
           <Route path="/removedriver" element={<RemoveDriver />} />
-          <Route path="/addbus"element={<AddBus/>}/>
+          <Route path="/addbus" element={<AddBus />} />
         </Routes>
       </div>
     </Router>
