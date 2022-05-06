@@ -34,7 +34,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sideTitle">Bus</h3>
           <ul className="sidebarList">
-          <Link style={{ textDecoration: 'none', color: 'grey' }}to="/src/components/pages/AddBus.jsx">
+          <Link style={{ textDecoration: 'none', color: 'grey' }}to="/addBus">
             <li className="sidebarListItem">
               <AddIcon className="sidebaricon" />
               Add Bus
