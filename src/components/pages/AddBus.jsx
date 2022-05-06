@@ -11,6 +11,7 @@ export default function AddBus() {
   return (
     <div className="BUSconatiner">
       <h1 className="heading">Add Bus</h1>
+      <div class="solid"/>
       <div className="Textarea">
         <input
           className="textarea"

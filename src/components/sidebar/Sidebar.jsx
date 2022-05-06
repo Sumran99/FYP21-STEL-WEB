@@ -53,10 +53,12 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sideTitle">Route</h3>
           <ul className="sidebarList">
+          <Link style={{ textDecoration: 'none', color: 'grey' }}to="/addroute">
             <li className="sidebarListItem active">
               <AddIcon className="sidebaricon" />
               Add Route
             </li>
+            </Link>
             <li className="sidebarListItem">
               <DeleteIcon className="sidebaricon" />
               Remove Route

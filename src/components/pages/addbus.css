@@ -4,3 +4,7 @@
 .Textarea{
     text-align: center;
 }
+.solid {
+    border-top: 3px solid #bbb;
+    padding-top: 5px;
+  }

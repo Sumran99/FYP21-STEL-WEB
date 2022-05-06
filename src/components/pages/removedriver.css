@@ -13,6 +13,7 @@
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   font-size:2.125rem ;
+  padding-left: 15px;
   letter-spacing: 0.00735em;
   color: rgba(0, 0, 0, 0.87)
 }
@@ -40,7 +41,7 @@ margin-bottom: 15px;
 .textarea{
   
   margin-top: 25px;
-  padding: 10px 14px;
+  padding: 15px 14px;
   display: block;
   margin-right: auto;
   margin-left: auto;
