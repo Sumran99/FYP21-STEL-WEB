@@ -7,7 +7,6 @@ export default function AddBus() {
   const [mileadge, setMileadge] = useState("");
   const [chasenumber, setChasenumber] = useState("");
   const [ac, setac] = useState("");
-  const [cnic, setcnic] = useState("");
 
   return (
     <div className="BUSconatiner">
@@ -54,15 +53,7 @@ export default function AddBus() {
           <option>AC</option>
           <option>NoN AC</option>
         </select>
-        <input
-          className="textarea"
-          placeholder=" Driver CNIC"
-          type={Text}
-          value={cnic}
-          onChange={(e) => {
-            setcnic(e.target.value);
-          }}
-        ></input>
+        
         <button className="Button">Add</button>
       </div>
     </div>
