@@ -6,7 +6,7 @@ export default function AddBus() {
   const [capacity, setCapacity] = useState("");
   const [mileadge, setMileadge] = useState("");
   const [chasenumber, setChasenumber] = useState("");
-  const [ac, setac] = useState("");
+  const [ac, setac] = useState("ac");
   const [cnic, setcnic] = useState("");
 
   return (
@@ -50,9 +50,13 @@ export default function AddBus() {
             setChasenumber(e.target.value);
           }}
         ></input>
-        <select value={ac}>
-          <option>AC</option>
-          <option>NoN AC</option>
+        <select
+          onChange={(e) => {
+            setac(e.target.value);
+          }}
+        >
+          <option value="ac">AC</option>
+          <option value="non-ac">NoN AC</option>
         </select>
         <input
           className="textarea"
@@ -63,7 +67,22 @@ export default function AddBus() {
             setcnic(e.target.value);
           }}
         ></input>
-        <button className="Button">Add</button>
+        <button
+          className="Button"
+          onClick={() => {
+            const obj = {
+              busnumber: busnumber,
+              chasenumber: chasenumber,
+              capacity: capacity,
+              mileadge: mileadge,
+              ac: ac,
+              driverCNIC: cnic,
+            };
+            console.log(JSON.stringify(obj));
+          }}
+        >
+          Add
+        </button>
       </div>
     </div>
   );
