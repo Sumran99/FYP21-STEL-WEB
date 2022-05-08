@@ -42,8 +42,8 @@ export default function AddRoute() {
         <button
           className="Button"
           onClick={() => {
-            const obj = {};
-            console.log();
+            const obj = { routenumber: routenumber, to: to, from: from };
+            console.log(obj);
           }}
         >
           Add
