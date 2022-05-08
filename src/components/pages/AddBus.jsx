@@ -57,7 +57,6 @@ export default function AddBus() {
           <option value="ac">AC</option>
           <option value="non-ac">NoN AC</option>
         </select>
-        <button className="Button">Add</button>
         <button
           className="Button"
           onClick={() => {

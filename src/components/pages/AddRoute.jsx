@@ -39,7 +39,13 @@ export default function AddRoute() {
           }}
         ></input>
 
-        <button className="Button" onClick={() => {}}>
+        <button
+          className="Button"
+          onClick={() => {
+            const obj = {};
+            console.log();
+          }}
+        >
           Add
         </button>
       </div>
