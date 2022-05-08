@@ -1,5 +1,5 @@
-import React , {useState} from 'react'
-import "./addroute.css"
+import React, { useState } from "react";
+import "./addroute.css";
 
 export default function AddRoute() {
   const [routenumber, setroutenumber] = useState("");
@@ -7,9 +7,8 @@ export default function AddRoute() {
   const [from, setfrom] = useState("");
 
   return (
-    <div className='BUSconatiner'>
-    
-    <h1 className="heading">Add Route</h1>
+    <div className="BUSconatiner">
+      <h1 className="heading">Add Route</h1>
       <div class="solid" />
       <div className="Textarea">
         <input
@@ -39,10 +38,11 @@ export default function AddRoute() {
             setfrom(e.target.value);
           }}
         ></input>
-        
-        <button className="Button">Add</button>
+
+        <button className="Button" onClick={() => {}}>
+          Add
+        </button>
       </div>
-    
     </div>
-  )
+  );
 }
