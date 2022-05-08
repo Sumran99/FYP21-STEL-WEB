@@ -70,6 +70,26 @@ export default function Sidebar() {
           </ul>
         </div>
         <div className="sidebarMenu">
+          <h3 className="sideTitle">Trip</h3>
+          <ul className="sidebarList">
+          <Link style={{ textDecoration: 'none', color: 'grey' }}to="/addtrip">
+            <li className="sidebarListItem active">
+              <AddIcon className="sidebaricon" />
+              Add Trip
+            </li>
+            </Link>
+            <li className="sidebarListItem">
+              <DeleteIcon className="sidebaricon" />
+              Remove Route
+            </li>
+            <li className="sidebarListItem">
+              <UpdateIcon className="sidebaricon" />
+              Update Route
+            </li>
+          </ul>
+        </div>
+        
+        <div className="sidebarMenu">
           <h3 className="sideTitle">Reports</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
