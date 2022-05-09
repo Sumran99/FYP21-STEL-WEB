@@ -10,6 +10,8 @@ import RemoveDriver from "./components/pages/RemoveDriver";
 import AddBus from "./components/pages/AddBus";
 import AddRoute from "./components/pages/AddRoute";
 import AddTRip from "./components/pages/AddTRip";
+import Removebus from "./components/pages/Removebus";
+import Removeroute from "./components/pages/Removeroute";
 
 function App() {
   return (
@@ -22,9 +24,10 @@ function App() {
           <Route path="/updatedriver" element={<UpdateDriver />} />
           <Route path="/removedriver" element={<RemoveDriver />} />
           <Route path="/addbus" element={<AddBus />} />
-          <Route path="/addroute"element={<AddRoute/>}/>
-          <Route path="/addtrip"element={<AddTRip/>}/>
-
+          <Route path="/addroute" element={<AddRoute />} />
+          <Route path="/addtrip" element={<AddTRip />} />
+          <Route path="/removebus" element={<Removebus />} />
+          <Route path="/removeroute" element={<Removeroute />} />
         </Routes>
       </div>
     </Router>
