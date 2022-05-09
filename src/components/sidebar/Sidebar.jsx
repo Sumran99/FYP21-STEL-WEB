@@ -17,13 +17,13 @@ export default function Sidebar() {
                 Add Driver
               </li>
             </Link>
-            <Link style={{ textDecoration: 'none', color: 'grey' }}to="/removedriver">
+            <Link style={{ textDecoration: 'none', color: 'white' }}to="/removedriver">
               <li className="sidebarListItem">
                 <DeleteIcon className="sidebaricon" />
                 Remove Driver
               </li>
             </Link>
-            <Link style={{ textDecoration: 'none', color: 'grey' }}to="/updatedriver">
+            <Link style={{ textDecoration: 'none', color: 'white' }}to="/updatedriver">
               <li className="sidebarListItem">
                 <UpdateIcon className="sidebaricon" />
                 Update Driver
@@ -40,10 +40,12 @@ export default function Sidebar() {
               Add Bus
             </li>
             </Link>
+            <Link style={{ textDecoration: 'none', color: 'grey' }}to="/removebus">
             <li className="sidebarListItem">
               <DeleteIcon className="sidebaricon" />
               Remove Bus
             </li>
+            </Link>
             <li className="sidebarListItem">
               <UpdateIcon className="sidebaricon" />
               Update Bus
@@ -59,10 +61,12 @@ export default function Sidebar() {
               Add Route
             </li>
             </Link>
+            <Link style={{ textDecoration: 'none', color: 'grey' }}to="/removeroute">
             <li className="sidebarListItem">
               <DeleteIcon className="sidebaricon" />
               Remove Route
             </li>
+            </Link>
             <li className="sidebarListItem">
               <UpdateIcon className="sidebaricon" />
               Update Route

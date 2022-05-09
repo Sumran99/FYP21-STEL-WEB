@@ -7,8 +7,6 @@ export default function FormPropsTextFields() {
     <div className="boxes">
       <h1 className="heading">Remove Driver</h1>
       <div>
-     
-
         <input
           className="textarea"
           placeholder="Type Driver CNIC"
@@ -18,10 +16,15 @@ export default function FormPropsTextFields() {
             setcnicnumber(e.target.value);
           }}
         ></input>
-        <button className="Button" onClick={()=>{
-          const obj = {drivercnic:cnicnumber}
-          console.log(JSON.stringify(obj))
-        }}>Delete Driver</button>
+        <button
+          className="Button"
+          onClick={() => {
+            const obj = { drivercnic: cnicnumber };
+            console.log(JSON.stringify(obj));
+          }}
+        >
+          Delete Driver
+        </button>
       </div>
     </div>
   );
