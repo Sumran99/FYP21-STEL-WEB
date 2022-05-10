@@ -64,10 +64,22 @@ export default function AddBus() {
               busnumber: busnumber,
               chasenumber: chasenumber,
               capacity: capacity,
-              mileadge: mileadge,
+              millage: mileadge,
               ac: ac,
             };
             console.log(JSON.stringify(obj));
+            fetch("/api/bus/addBus", {
+              method: "post",
+              headers: {
+                Accept: "application/json",
+                "Content-type": "application/json",
+              },
+              // (var) payload looks like this {Header: "Sending", . . .}
+              body: JSON.stringify(obj),
+            })
+              .then((res) => res.json())
+              .then((resp) => console.log(resp))
+              .catch((err) => console.log(err));
           }}
         >
           Add
