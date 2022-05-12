@@ -49,13 +49,13 @@ export default function AddBus() {
             setChasenumber(e.target.value);
           }}
         ></input>
-        <select
+        <select className="select" 
           onChange={(e) => {
             setac(e.target.value);
           }}
         >
-          <option value="ac">AC</option>
-          <option value="non-ac">NoN AC</option>
+          <option  value="ac">AC</option>
+          <option  value="non-ac">NON-AC</option>
         </select>
         <button
           className="Button"
