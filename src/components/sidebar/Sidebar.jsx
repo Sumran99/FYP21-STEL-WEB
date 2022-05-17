@@ -2,6 +2,7 @@ import "./sidebar.css";
 import AddIcon from "@mui/icons-material/Add";
 import UpdateIcon from "@mui/icons-material/Update";
 import DeleteIcon from "@mui/icons-material/Delete";
+import PageviewIcon from '@mui/icons-material/Pageview';
 import PreviewIcon from "@mui/icons-material/Preview";
 import { Link } from "react-router-dom";
 export default function Sidebar() {
@@ -38,6 +39,10 @@ export default function Sidebar() {
                 Update Driver
               </li>
             </Link>
+            <li className="sidebarListItem">
+                <PageviewIcon className="sidebaricon" />
+                View Driver
+              </li>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -65,6 +70,10 @@ export default function Sidebar() {
               <UpdateIcon className="sidebaricon" />
               Update Bus
             </li>
+            <li className="sidebarListItem">
+                <PageviewIcon className="sidebaricon" />
+                View Bus
+              </li>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -92,6 +101,10 @@ export default function Sidebar() {
               <UpdateIcon className="sidebaricon" />
               Update Route
             </li>
+            <li className="sidebarListItem">
+                <PageviewIcon className="sidebaricon" />
+                View Route
+              </li>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -114,6 +127,10 @@ export default function Sidebar() {
               <UpdateIcon className="sidebaricon" />
               Update Route
             </li>
+            <li className="sidebarListItem">
+                <PageviewIcon className="sidebaricon" />
+                View Route
+              </li>
           </ul>
         </div>
 
