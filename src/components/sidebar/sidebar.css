@@ -8,6 +8,8 @@
 .sidebarWrapper {
   padding: 20px;
   color: rgb(252, 246, 246);
+  background-color: rgb(80, 67, 67);
+  /* background-image: url("https://img.freepik.com/free-vector/shuttle-bus-transport-isolate-white-background_124507-8128.jpg"); */
 }
 .sidebarMenu {
   margin-bottom: 10px;

@@ -2,7 +2,7 @@ import "./sidebar.css";
 import AddIcon from "@mui/icons-material/Add";
 import UpdateIcon from "@mui/icons-material/Update";
 import DeleteIcon from "@mui/icons-material/Delete";
-import PageviewIcon from '@mui/icons-material/Pageview';
+import PageviewIcon from "@mui/icons-material/Pageview";
 import PreviewIcon from "@mui/icons-material/Preview";
 import { Link } from "react-router-dom";
 export default function Sidebar() {
@@ -39,10 +39,15 @@ export default function Sidebar() {
                 Update Driver
               </li>
             </Link>
-            <li className="sidebarListItem">
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/viewdriver"
+            >
+              <li className="sidebarListItem">
                 <PageviewIcon className="sidebaricon" />
                 View Driver
               </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -70,10 +75,15 @@ export default function Sidebar() {
               <UpdateIcon className="sidebaricon" />
               Update Bus
             </li>
-            <li className="sidebarListItem">
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/viewbus"
+            >
+              <li className="sidebarListItem">
                 <PageviewIcon className="sidebaricon" />
                 View Bus
               </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -101,13 +111,18 @@ export default function Sidebar() {
               <UpdateIcon className="sidebaricon" />
               Update Route
             </li>
-            <li className="sidebarListItem">
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to="/viewroute"
+            >
+              <li className="sidebarListItem">
                 <PageviewIcon className="sidebaricon" />
                 View Route
               </li>
+            </Link>
           </ul>
         </div>
-        <div className="sidebarMenu">
+        {/* <div className="sidebarMenu">
           <h3 className="sideTitle">Trip</h3>
           <ul className="sidebarList">
             <Link
@@ -128,9 +143,9 @@ export default function Sidebar() {
               Update Route
             </li>
             <li className="sidebarListItem">
-                <PageviewIcon className="sidebaricon" />
-                View Route
-              </li>
+              <PageviewIcon className="sidebaricon" />
+              View Route
+            </li>
           </ul>
         </div>
 
@@ -146,7 +161,7 @@ export default function Sidebar() {
               Route Report
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );

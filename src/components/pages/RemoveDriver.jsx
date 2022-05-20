@@ -19,8 +19,20 @@ export default function FormPropsTextFields() {
         <button
           className="Button"
           onClick={() => {
-            const obj = { drivercnic: cnicnumber };
+            const obj = { cnic: cnicnumber };
             console.log(JSON.stringify(obj));
+            fetch("/api/driver/deleteDriver", {
+              method: "post",
+              headers: {
+                Accept: "application/json",
+                "Content-type": "application/json",
+              },
+              // (var) payload looks like this {Header: "Sending", . . .}
+              body: JSON.stringify(obj),
+            })
+              .then((res) => res.json())
+              .then((resp) => console.log(resp))
+              .catch((err) => console.log(err));
           }}
         >
           Delete Driver

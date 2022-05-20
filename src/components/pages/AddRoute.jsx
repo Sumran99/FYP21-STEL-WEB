@@ -42,8 +42,20 @@ export default function AddRoute() {
         <button
           className="Button"
           onClick={() => {
-            const obj = { routenumber: routenumber, to: to, from: from };
+            const obj = { number: routenumber, to: to, from: from };
             console.log(obj);
+            fetch("/api/route/addRoute", {
+              method: "post",
+              headers: {
+                Accept: "application/json",
+                "Content-type": "application/json",
+              },
+              // (var) payload looks like this {Header: "Sending", . . .}
+              body: JSON.stringify(obj),
+            })
+              .then((res) => res.json())
+              .then((resp) => console.log(resp))
+              .catch((err) => console.log(err));
           }}
         >
           Add

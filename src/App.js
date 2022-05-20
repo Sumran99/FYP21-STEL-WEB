@@ -12,6 +12,10 @@ import AddRoute from "./components/pages/AddRoute";
 import AddTRip from "./components/pages/AddTRip";
 import Removebus from "./components/pages/Removebus";
 import Removeroute from "./components/pages/Removeroute";
+import Login from "./components/pages/login";
+import ViewDriver from "./components/pages/viewdriver"
+import ViewBus from "./components/pages/viewbus"
+import ViewRoute from './components/pages/viewroute'
 
 function App() {
   return (
@@ -20,6 +24,7 @@ function App() {
       <div className="container">
         <Sidebar />
         <Routes>
+         
           <Route exact path="/adddriver" element={<Adddriver />} />
           <Route path="/updatedriver" element={<UpdateDriver />} />
           <Route path="/removedriver" element={<RemoveDriver />} />
@@ -28,6 +33,11 @@ function App() {
           <Route path="/addtrip" element={<AddTRip />} />
           <Route path="/removebus" element={<Removebus />} />
           <Route path="/removeroute" element={<Removeroute />} />
+          <Route path="/viewdriver" element={<ViewDriver />} />
+          <Route path="/viewbus" element={<ViewBus />} />
+          <Route path="/viewroute" element={<ViewRoute />} />
+
+          
         </Routes>
       </div>
     </Router>
