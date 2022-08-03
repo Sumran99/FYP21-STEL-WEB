@@ -29,8 +29,8 @@ const Addbus = () => {
       let res = await fetch("https://stel-api.herokuapp.com/api/bus/addBus", {
         method: "POST",
         headers: {
-          Accept: "application/json",
-          "Content-type": "application/json",
+          "Accept": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           busnumber: busnumber,
