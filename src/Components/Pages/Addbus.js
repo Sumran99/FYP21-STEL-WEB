@@ -26,34 +26,25 @@ const Addbus = () => {
   const [message, setmessage] = React.useState("");
   let handlesubmit = async (e) => {
     try {
-      let res = await fetch("https://stel-api.herokuapp.com/api/bus/addBus", {
-        method: "POST",
+      await fetch("/api/bus/addBus", {
+        method: "post",
         headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Content-type": "application/json",
         },
         body: JSON.stringify({
           busnumber: busnumber,
           capacity: capacity,
           millage: mileage,
           chasenumber: chase,
-          ac: "true",
+          ac: "ac",
         }),
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
-        setbusnumber("");
-        setcapacity("");
-        setmileage("");
-        setchase("");
-        setac(false);
-        setmessage("Bus Added Succesfully");
-      } else {
-        setmessage("Error Occured ");
-      }
+      })
+        .then((res) => res.json())
+        .then((resp) => console.log(resp))
+        .then((err) => console.log("Error Try Block" + err));
     } catch (err) {
-      console.log(err);
-      setmessage("Error Occured ");
+      console.log("Error Catch Block" + err.message);
     }
   };
   return (
