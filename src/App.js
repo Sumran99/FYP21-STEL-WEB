@@ -2,6 +2,7 @@ import "./App.css";
 import Sidebar from "./Components/Sidebar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';
+// STEL Portal
 import Addbus from "./Components/Pages/Addbus";
 import Deletebus from "./Components/Pages/Deletebus";
 import UpdateBus from "./Components/Pages/UpdateBus";
