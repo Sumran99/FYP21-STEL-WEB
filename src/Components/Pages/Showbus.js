@@ -16,7 +16,9 @@ const Showbus = () => {
   const [buses, setBuses] = React.useState([]);
 
   const getAllBuses = async () => {
-    const response = await fetch("https://stel-api.herokuapp.com/api/bus/buses");
+    const response = await fetch(
+      "https://stel-api.herokuapp.com/api/bus/buses"
+    );
     const data = await response.json();
     setBuses(data.Buses);
     console.log(buses);

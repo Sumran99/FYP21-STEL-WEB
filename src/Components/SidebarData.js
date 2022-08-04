@@ -50,52 +50,53 @@ export const SidebarData = [
         cName: "sub-nav",
       },
       {
-        title: "Reports 2",
-        path: "/reports/reports2",
+        title: "Delete Route",
+        path: "/route/deleteroute",
         icon: <IoIcons.IoIosPaper />,
         cName: "sub-nav",
       },
       {
-        title: "Reports 3",
-        path: "/reports/reports3",
+        title: "Update Route",
+        path: "/route/updateroute",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: "Show Route",
+        path: "/route/showroute",
         icon: <IoIcons.IoIosPaper />,
       },
     ],
   },
   {
-    title: "Products",
-    path: "/products",
-    icon: <FaIcons.FaCartPlus />,
-  },
-  {
-    title: "Team",
-    path: "/team",
-    icon: <IoIcons.IoMdPeople />,
-  },
-  {
-    title: "Messages",
-    path: "/messages",
-    icon: <FaIcons.FaEnvelopeOpenText />,
-
+    title: "Driver",
+    path: "/driver",
+    icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: "Message 1",
-        path: "/messages/message1",
+        title: "Add Driver",
+        path: "/driver/adddriver",
+        icon: <IoIcons.IoIosPaper />,
+        cName: "sub-nav",
+      },
+      {
+        title: "Delete Driver",
+        path: "/driver/deletedriver",
+        icon: <IoIcons.IoIosPaper />,
+        cName: "sub-nav",
+      },
+      {
+        title: "Update Driver",
+        path: "/driver/updatedriver",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Message 2",
-        path: "/messages/message2",
+        title: "Show Driver",
+        path: "/driver/showdriver",
         icon: <IoIcons.IoIosPaper />,
       },
     ],
-  },
-  {
-    title: "Support",
-    path: "/support",
-    icon: <IoIcons.IoMdHelpCircle />,
   },
 ];
