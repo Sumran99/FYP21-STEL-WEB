@@ -31,7 +31,7 @@ const Showbus = () => {
         <h1>Buses Details</h1>
       </Grid>
       <Grid item xs={12}>
-        <Box sx={{ height: 400, width: "50%" }}>
+        <Box sx={{ height: 400, width: "100%" }}>
           <DataGrid
             rows={buses}
             columns={columns}
