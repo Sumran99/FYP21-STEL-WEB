@@ -8,6 +8,7 @@ import Deletebus from "./Components/Pages/Deletebus";
 import UpdateBus from "./Components/Pages/UpdateBus";
 import Showbus from "./Components/Pages/Showbus";
 import AddRoute from "./Components/Pages/AddRoute";
+import Adddriver from "./Components/Pages/Adddriver";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/overview/updatebus" element={<UpdateBus />} />
           <Route exact path="/overview/showbus" element={<Showbus />} />
           <Route exact path="/route/addroute" element={<AddRoute />} />
+          <Route exact path="/driver/adddriver" element={<Adddriver />} />
         </Routes>
       </Router>
     </>
