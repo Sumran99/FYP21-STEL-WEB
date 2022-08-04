@@ -26,7 +26,7 @@ const Addbus = () => {
   const [message, setmessage] = React.useState("");
   let handlesubmit = async (e) => {
     try {
-      await fetch("/api/bus/addBus", {
+      await fetch("https://stel-api.herokuapp.com/api/bus/addBus", {
         method: "post",
         headers: {
           Accept: "application/json",
