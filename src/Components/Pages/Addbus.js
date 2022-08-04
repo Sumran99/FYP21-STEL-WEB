@@ -28,6 +28,7 @@ const Addbus = () => {
     try {
       await fetch("https://stel-api.herokuapp.com/api/bus/addBus", {
         method: "post",
+        mode: 'no-cors',
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
