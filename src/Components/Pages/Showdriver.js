@@ -18,7 +18,7 @@ const Showdriver = () => {
       "https://stel-api.herokuapp.com/api/driver/drivers"
     );
     const data = await response.json();
-    setDriver(data.Buses);
+    setdriver(data.driver);
     console.log(driver);
   };
 
