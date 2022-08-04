@@ -2,7 +2,6 @@
   "name": "fyp-stel",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://stel-api.herokuapp.com",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
