@@ -33,10 +33,10 @@ const Addbus = () => {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          busnumber: busnumber,
+          busNumber: busnumber,
           capacity: capacity,
           millage: mileage,
-          chasenumber: chase,
+          chaseNumber: chase,
           ac: "ac",
         }),
       })

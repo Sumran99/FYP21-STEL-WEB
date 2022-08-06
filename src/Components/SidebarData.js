@@ -7,7 +7,7 @@ import * as RiIcons from "react-icons/ri";
 export const SidebarData = [
   {
     title: "Bus",
-    path: "/overview",
+    path: "/",
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -15,22 +15,22 @@ export const SidebarData = [
     subNav: [
       {
         title: "Add Bus",
-        path: "/overview/addbus",
+        path: "/addbus",
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: "Delete Bus",
-        path: "/overview/deletebus",
+        path: "/deletebus",
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: "Update Bus",
-        path: "/overview/updatebus",
+        path: "/updatebus",
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: "Show Bus",
-        path: "/overview/showbus",
+        path: "/showbus",
         icon: <IoIcons.IoIosPaper />,
       },
     ],

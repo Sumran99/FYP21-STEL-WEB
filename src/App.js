@@ -17,10 +17,10 @@ function App() {
       <Router>
         <Sidebar />
         <Routes>
-          <Route exact path="/overview/addbus" element={<Addbus />} />
-          <Route exact path="/overview/deletebus" element={<Deletebus />} />
-          <Route exact path="/overview/updatebus" element={<UpdateBus />} />
-          <Route exact path="/overview/showbus" element={<Showbus />} />
+          <Route exact path="/addbus" element={<Addbus />} />
+          <Route exact path="/deletebus" element={<Deletebus />} />
+          <Route exact path="/updatebus" element={<UpdateBus />} />
+          <Route exact path="/showbus" element={<Showbus />} />
           <Route exact path="/route/addroute" element={<AddRoute />} />
           <Route exact path="/driver/adddriver" element={<Adddriver />} />
           <Route exact path="/driver/showdriver" element={<Showdriver />} />

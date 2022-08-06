@@ -18,7 +18,6 @@ const columns = [
 const Showbus = () => {
   const [buses, setBuses] = React.useState([]);
   const [deleteNo, setDeleteNo] = React.useState([]);
-  const [check, setCheck] = React.useState(false);
   const getAllBuses = React.useCallback(async () => {
     const response = await fetch(
       "https://stel-api.herokuapp.com/api/bus/buses"
@@ -36,7 +35,7 @@ const Showbus = () => {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          busnumber: deleteNo,
+          busNumbers: deleteNo,
         }),
       })
         .then((res) => res.json())
@@ -46,14 +45,6 @@ const Showbus = () => {
       console.log("Error Catch Block" + err.message);
     }
   };
-
-  React.useEffect(() => {
-    console.log(
-      JSON.stringify({
-        busnumber: deleteNo,
-      })
-    );
-  }, [deleteNo]);
 
   React.useEffect(() => {
     getAllBuses();
