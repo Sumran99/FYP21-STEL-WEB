@@ -65,11 +65,7 @@ const Showbus = () => {
         <h1>Buses Details</h1>
       </Grid>
       <Grid item xs={12}>
-<<<<<<< HEAD
-        <Box sx={{ height: 400, width: "58%" }}>
-=======
-        <Box sx={{ height: 400, width: "50%" }}>
->>>>>>> parent of 1003bc6 (Update Showbus.js)
+        <Box sx={{ height: 400, width: "75%" }}>
           <DataGrid
             pageSize={5}
             rowsPerPageOptions={[10]}
