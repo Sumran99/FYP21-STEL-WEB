@@ -7,7 +7,7 @@ const columns = [
   { field: "phone", headerName: "Phone No", width: 120 },
   { field: "cnic", headerName: "CNIC", width: 120 },
   { field: "license", headerName: "License No", width: 120 },
-  { field: "experince", headerName: "Experince", width: 70 },
+  { field: "experience", headerName: "Experince", width: 70 },
 ];
 
 const Showdriver = () => {
@@ -18,7 +18,7 @@ const Showdriver = () => {
       "https://stel-api.herokuapp.com/api/driver/drivers"
     );
     const data = await response.json();
-    setdriver(data.driver);
+    setdriver(data.Drivers);
     console.log(driver);
   };
 

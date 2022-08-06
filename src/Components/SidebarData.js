@@ -99,4 +99,9 @@ export const SidebarData = [
       },
     ],
   },
+  {
+    title: "Statistics",
+    path: "/statistics",
+    icon: <IoIcons.IoIosPaper />,
+  },
 ];

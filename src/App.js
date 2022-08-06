@@ -10,6 +10,7 @@ import Showbus from "./Components/Pages/Showbus";
 import AddRoute from "./Components/Pages/AddRoute";
 import Adddriver from "./Components/Pages/Adddriver";
 import Showdriver from "./Components/Pages/Showdriver";
+import Statistics from "./Components/Pages/Statistics";
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/route/addroute" element={<AddRoute />} />
           <Route exact path="/driver/adddriver" element={<Adddriver />} />
           <Route exact path="/driver/showdriver" element={<Showdriver />} />
+          <Route exact path="/statistics" element={<Statistics />} />
         </Routes>
       </Router>
     </>
