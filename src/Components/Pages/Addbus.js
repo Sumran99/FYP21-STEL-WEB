@@ -37,12 +37,17 @@ const Addbus = () => {
           capacity: capacity,
           millage: mileage,
           chaseNumber: chase,
-          ac: "ac",
+          ac: ac,
         }),
       })
         .then((res) => res.json())
         .then((resp) => console.log(resp))
         .then((err) => console.log("Error Try Block" + err));
+      setbusnumber("");
+      setcapacity("");
+      setmileage("");
+      setchase("");
+      setac(!ac);
     } catch (err) {
       console.log("Error Catch Block" + err.message);
     }
@@ -67,6 +72,7 @@ const Addbus = () => {
           id="bus-number"
           label="Bus Number"
           variant="outlined"
+          value={busnumber}
           onChange={(e) => setbusnumber(e.target.value)}
         />
         <RedBar />
@@ -74,6 +80,7 @@ const Addbus = () => {
           id="student-capacity"
           label="Student Capacity"
           variant="outlined"
+          value={capacity}
           onChange={(e) => setcapacity(e.target.value)}
         />
         <RedBar />
@@ -81,6 +88,7 @@ const Addbus = () => {
           id="mileage"
           label="Mileage"
           variant="outlined"
+          value={mileage}
           onChange={(e) => setmileage(e.target.value)}
         />
         <RedBar />
@@ -88,6 +96,7 @@ const Addbus = () => {
           id="chase_no"
           label="Chase Number"
           variant="outlined"
+          value={chase}
           onChange={(e) => setchase(e.target.value)}
         />
         <RedBar />
@@ -98,16 +107,16 @@ const Addbus = () => {
           name="row-radio-buttons-group"
         >
           <FormControlLabel
-            value={true}
+            value={!ac}
             control={<Radio />}
             label="AC"
-            onChange={(e) => setac(e.target.value)}
+            onChange={(e) => setac(!e.target.value)}
           />
           <FormControlLabel
-            value={false}
+            value={ac}
             control={<Radio />}
             label="Non AC"
-            onChange={(e) => setac(e.target.value)}
+            onChange={(e) => setac(!e.target.value)}
           />
         </RadioGroup>
         <RedBar />

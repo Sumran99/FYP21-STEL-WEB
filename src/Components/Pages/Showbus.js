@@ -7,8 +7,8 @@ import Button from "@mui/material/Button";
 import { DataGrid } from "@mui/x-data-grid";
 
 const columns = [
-  { field: "busnumber", headerName: "Bus No", width: 85 },
-  { field: "chasenumber", headerName: "Chase No", width: 120 },
+  { field: "busNumber", headerName: "Bus No", width: 85 },
+  { field: "chaseNumber", headerName: "Chase No", width: 120 },
   { field: "millage", headerName: "Mileage", width: 120 },
   { field: "capacity", headerName: "Capacity", width: 120 },
   { field: "ac", headerName: "AC", width: 70 },
@@ -28,7 +28,7 @@ const Showbus = () => {
 
   const handledelete = async () => {
     try {
-      await fetch("https://stel-api.herokuapp.com/api/bus/deleteBus", {
+      await fetch("https://stel-api.herokuapp.com/api/bus/deleteBuses", {
         method: "post",
         headers: {
           Accept: "application/json",
@@ -48,7 +48,7 @@ const Showbus = () => {
 
   React.useEffect(() => {
     getAllBuses();
-  }, [getAllBuses]);
+  }, [buses, getAllBuses]);
 
   return (
     <>
@@ -70,7 +70,7 @@ const Showbus = () => {
               setDeleteNo(
                 buses
                   .filter((row) => selectedArray.includes(row._id))
-                  .map((item) => item.busnumber)
+                  .map((item) => item.busNumber)
               );
             }}
           />

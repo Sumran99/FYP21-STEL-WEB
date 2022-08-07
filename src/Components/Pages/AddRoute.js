@@ -23,25 +23,33 @@ const AddRoute = () => {
   const [message, setmessage] = React.useState("");
   let handlesubmit = async (e) => {
     try {
-      let res = await fetch("", {
-        body: JSON.stringify({
-          routeNo: routeNo,
-          departure: departure,
-          arrival: arrival,
-        }),
-      });
+      let res = await fetch(
+        "https://stel-api.herokuapp.com/api/route/addRoute",
+        {
+          method: "post",
+          headers: {
+            Accept: "application/json",
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            number: routeNo,
+            from: departure,
+            to: arrival,
+          }),
+        }
+      );
       let resJson = await res.json();
-      if (res.status === 200) {
+      if (res.status === 201) {
         setRouteNo("");
         setDeparture("");
         setArrival("");
         setmessage("Route Added Succesfully");
       } else {
-        setmessage("Error Occured ");
+        setmessage("Error Occured1 ");
       }
     } catch (err) {
       console.log(err);
-      setmessage("Error Occured ");
+      setmessage("Error Occured2 ");
     }
   };
   return (
@@ -64,6 +72,7 @@ const AddRoute = () => {
           id="route-number"
           label="Route Number"
           variant="outlined"
+          required="true"
           onChange={(e) => setRouteNo(e.target.value)}
         />
         <RedBar />
