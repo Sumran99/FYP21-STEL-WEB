@@ -27,6 +27,8 @@ const UpdateBus = () => {
   const [bus, setBus] = React.useState([]);
   const [active, setActive] = React.useState("");
   const [checked, setChecked] = React.useState(true);
+  const [mileage, setMileage] = React.useState("");
+  const [capacity, setCapacity] = React.useState("");
 
   const columns = [
     { field: "busNumber", headerName: "Bus No", width: 85 },
@@ -41,13 +43,13 @@ const UpdateBus = () => {
     setData(event.target.value);
   };
 
-  const getBuses = React.useCallback(async () => {
+  const getBuses = async () => {
     const response = await fetch(
       "https://stel-api.herokuapp.com/api/bus/buses"
     );
     const res = await response.json();
     setBus(res.Buses);
-  }, []);
+  };
 
   React.useEffect(() => {
     getBuses();
@@ -59,8 +61,11 @@ const UpdateBus = () => {
         bus.find((element) => element.busNumber === data),
       ]);
     }
-  }, [data, getBuses, filteredBus, bus]);
+  }, [data]);
 
+  React.useEffect(() => {
+    setMileage([...[], filteredBus.map((element) => element.millage)]);
+  }, [filteredBus]);
   const getBusNumbers = React.useCallback(async () => {
     const response = await fetch(
       `https://stel-api.herokuapp.com/api/bus/busesNumbers`
@@ -75,6 +80,7 @@ const UpdateBus = () => {
   React.useEffect(() => {
     console.log(active);
   }, [active]);
+
   return (
     <>
       <Box
@@ -97,9 +103,6 @@ const UpdateBus = () => {
             value={data}
             onChange={handleChange}
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
             {numbers.map((item) => {
               return (
                 <MenuItem key={item._id} value={item.busNumber}>
@@ -110,8 +113,8 @@ const UpdateBus = () => {
           </Select>
         </FormControl>
         <Grid item xs={12}>
-          <TextField id="outlined-basic" label="mileage" variant="outlined" />
-          <TextField id="outlined-basic" label="capacity" variant="outlined" />
+          <TextField value={mileage} label="mileage" variant="outlined" />
+          <TextField label="capacity" variant="outlined" />
           <Stack direction="row" alignItems="center">
             <Typography>Non-Active</Typography>
             <Switch
