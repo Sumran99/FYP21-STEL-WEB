@@ -26,7 +26,8 @@ const UpdateBus = () => {
   const [filteredBus, setFilteredBus] = React.useState([]);
   const [bus, setBus] = React.useState([]);
   const [active, setActive] = React.useState("");
-  const [checked, setChecked] = React.useState(true);
+  const [acChecked, setAcChecked] = React.useState(true);
+  const [activeChecked, setActiveChecked] = React.useState(true);
   const [mileage, setMileage] = React.useState("");
   const [capacity, setCapacity] = React.useState("");
   const [chaseNo, setChaseNo] = React.useState("");
@@ -37,7 +38,7 @@ const UpdateBus = () => {
     { field: "millage", headerName: "Mileage", width: 120 },
     { field: "capacity", headerName: "Capacity", width: 120 },
     { field: "ac", headerName: "AC", width: 70 },
-    { field: "active", headerName: "Active", width: 70 },
+    { field: "active", headerName: "Active", width: 60 },
   ];
 
   const handleChange = async (event) => {
@@ -68,7 +69,8 @@ const UpdateBus = () => {
     setMileage([...[], filteredBus.map((element) => element.millage)]);
     setCapacity([...[], filteredBus.map((element) => element.capacity)]);
     setChaseNo([...[], filteredBus.map((element) => element.chaseNumber)]);
-    setChecked(filteredBus.map((element) => element.ac)[0]);
+    setAcChecked(filteredBus.map((element) => element.ac)[0]);
+    setActiveChecked(filteredBus.map((element) => element.active)[0]);
   }, [filteredBus]);
   const getBusNumbers = React.useCallback(async () => {
     const response = await fetch(
@@ -165,21 +167,33 @@ const UpdateBus = () => {
           <Stack direction="row" alignItems="center">
             <Typography>Non-AC</Typography>
             <Switch
-              checked={checked}
+              checked={acChecked}
               onChange={(event) => {
-                setChecked(event.target.checked);
-                setActive(!checked);
+                setAcChecked(event.target.checked);
+                setActive(!acChecked);
               }}
               inputProps={{ "aria-label": "ant design" }}
             />
             <Typography>AC</Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center">
+            <Typography>Non-Active</Typography>
+            <Switch
+              checked={activeChecked}
+              onChange={(event) => {
+                setActiveChecked(event.target.checked);
+                setActive(!activeChecked);
+              }}
+              inputProps={{ "aria-label": "ant design" }}
+            />
+            <Typography>Active</Typography>
           </Stack>
         </Grid>
         <Grid item xs={12}>
           <h1>Bus Details</h1>
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{ height: 300, width: "200%" }}>
+          <Box sx={{ height: 250, width: "168%" }}>
             <DataGrid
               rows={filteredBus}
               columns={columns}
