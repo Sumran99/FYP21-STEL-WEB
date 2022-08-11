@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, renderActionsCell } from "@mui/x-data-grid";
 import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
 import Switch from "@mui/material/Switch";
@@ -29,7 +29,8 @@ const UpdateBus = () => {
   const [checked, setChecked] = React.useState(true);
   const [mileage, setMileage] = React.useState("");
   const [capacity, setCapacity] = React.useState("");
-
+  const [chaseNo, setChaseNo] = React.useState("");
+  const [focus, setFocus] = React.useState(false);
   const columns = [
     { field: "busNumber", headerName: "Bus No", width: 85 },
     { field: "chaseNumber", headerName: "Chase No", width: 120 },
@@ -65,6 +66,9 @@ const UpdateBus = () => {
 
   React.useEffect(() => {
     setMileage([...[], filteredBus.map((element) => element.millage)]);
+    setCapacity([...[], filteredBus.map((element) => element.capacity)]);
+    setChaseNo([...[], filteredBus.map((element) => element.chaseNumber)]);
+    setChecked(filteredBus.map((element) => element.ac)[0]);
   }, [filteredBus]);
   const getBusNumbers = React.useCallback(async () => {
     const response = await fetch(
@@ -80,6 +84,10 @@ const UpdateBus = () => {
   React.useEffect(() => {
     console.log(active);
   }, [active]);
+
+  useEffect(() => {
+    console.log(capacity);
+  }, [capacity]);
 
   return (
     <>
@@ -113,10 +121,49 @@ const UpdateBus = () => {
           </Select>
         </FormControl>
         <Grid item xs={12}>
-          <TextField value={mileage} label="mileage" variant="outlined" />
-          <TextField label="capacity" variant="outlined" />
+          <FormControl>
+            <TextField
+              defaultValue={mileage}
+              key={mileage}
+              label="mileage"
+              variant="outlined"
+              autoFocus={focus}
+              onChange={(e) => {
+                setMileage(e.target.value);
+                setFocus(true);
+              }}
+            />
+          </FormControl>
+          <RedBar />
+          <FormControl>
+            <TextField
+              key={capacity}
+              defaultValue={capacity}
+              label="capacity"
+              variant="outlined"
+              autoFocus={focus}
+              onChange={(e) => {
+                setCapacity(e.target.value);
+                setFocus(true);
+              }}
+            />
+          </FormControl>
+          <RedBar />
+          <FormControl>
+            <TextField
+              key={chaseNo}
+              defaultValue={chaseNo}
+              label="Chase No"
+              variant="outlined"
+              autoFocus={focus}
+              onChange={(e) => {
+                setChaseNo(e.target.value);
+                setFocus(true);
+              }}
+            />
+          </FormControl>
           <Stack direction="row" alignItems="center">
-            <Typography>Non-Active</Typography>
+            <Typography>Non-AC</Typography>
             <Switch
               checked={checked}
               onChange={(event) => {
@@ -125,7 +172,7 @@ const UpdateBus = () => {
               }}
               inputProps={{ "aria-label": "ant design" }}
             />
-            <Typography>Active</Typography>
+            <Typography>AC</Typography>
           </Stack>
         </Grid>
         <Grid item xs={12}>
