@@ -9,6 +9,7 @@ import { TextField } from "@mui/material";
 import Switch from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 function RedBar() {
   return (
@@ -40,7 +41,30 @@ const UpdateBus = () => {
     { field: "ac", headerName: "AC", width: 70 },
     { field: "active", headerName: "Active", width: 60 },
   ];
-
+  const handleupdate = async (e) => {
+    try {
+      await fetch("https://stel-api.herokuapp.com/api/bus/updateBus", {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          busNumber: data,
+          capacity: Array.isArray(capacity) ? capacity.join() : capacity,
+          millage: Array.isArray(mileage) ? mileage.join() : mileage,
+          chaseNumber: Array.isArray(chaseNo) ? chaseNo.join() : chaseNo,
+          ac: acChecked,
+          active: activeChecked,
+        }),
+      })
+        .then((res) => res.json())
+        .then((resp) => console.log(resp))
+        .then((err) => console.log("Error Try Block" + err));
+    } catch (err) {
+      console.log("Error Catch Block" + err.message);
+    }
+  };
   const handleChange = async (event) => {
     setData(event.target.value);
   };
@@ -175,8 +199,7 @@ const UpdateBus = () => {
               inputProps={{ "aria-label": "ant design" }}
             />
             <Typography>AC</Typography>
-          </Stack>
-          <Stack direction="row" alignItems="center">
+            <p> || </p>
             <Typography>Non-Active</Typography>
             <Switch
               checked={activeChecked}
@@ -188,6 +211,9 @@ const UpdateBus = () => {
             />
             <Typography>Active</Typography>
           </Stack>
+          <Button variant="outlined" onClick={handleupdate}>
+            Update Bus
+          </Button>
         </Grid>
         <Grid item xs={12}>
           <h1>Bus Details</h1>
