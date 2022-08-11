@@ -61,6 +61,9 @@ const UpdateBus = () => {
         .then((res) => res.json())
         .then((resp) => console.log(resp))
         .then((err) => console.log("Error Try Block" + err));
+      setCapacity([]);
+      setMileage([]);
+      setChaseNo([]);
     } catch (err) {
       console.log("Error Catch Block" + err.message);
     }
