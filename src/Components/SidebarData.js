@@ -45,7 +45,7 @@ export const SidebarData = [
     subNav: [
       {
         title: "Add Route",
-        path: "/route/addroute",
+        path: "/addroute",
         icon: <IoIcons.IoIosPaper />,
         cName: "sub-nav",
       },
@@ -57,7 +57,7 @@ export const SidebarData = [
       },
       {
         title: "Update Route",
-        path: "/route/updateroute",
+        path: "/updateroute",
         icon: <IoIcons.IoIosPaper />,
       },
       {
