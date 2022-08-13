@@ -46,7 +46,7 @@ const Sidebar = () => {
   const ToggleSidebar = () => {
     sidebar === true ? setSidebar(false) : setSidebar(true);
   };
-  // const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setSidebar(!sidebar);
 
   return (
     <>

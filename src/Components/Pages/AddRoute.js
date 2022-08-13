@@ -38,7 +38,7 @@ const AddRoute = () => {
           }),
         }
       );
-      let resJson = await res.json();
+      // let resJson = await res.json();
       if (res.status === 201) {
         setRouteNo("");
         setDeparture("");
