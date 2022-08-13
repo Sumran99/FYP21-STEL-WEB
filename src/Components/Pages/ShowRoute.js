@@ -23,10 +23,26 @@ const ShowRoute = () => {
   }, [getAllDrivers]);
   return (
     <>
-      <Grid item xs={12}>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        ustifyContent="center"
+        item
+        xs={12}
+      >
         <h1>Driver Details</h1>
       </Grid>
-      <Grid item xs={12}>
+      <Grid
+        item
+        xs={12}
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: "50vh" }}
+      >
         <Box sx={{ height: 400, width: "50%" }}>
           <DataGrid
             rows={number}
