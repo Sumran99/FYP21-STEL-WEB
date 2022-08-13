@@ -37,7 +37,7 @@ export const SidebarData = [
   },
   {
     title: "Route",
-    path: "/route",
+    path: "/",
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -62,7 +62,7 @@ export const SidebarData = [
       },
       {
         title: "Show Route",
-        path: "/route/showroute",
+        path: "/showroute",
         icon: <IoIcons.IoIosPaper />,
       },
     ],
