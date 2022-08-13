@@ -31,7 +31,7 @@ const ShowRoute = () => {
         item
         xs={12}
       >
-        <h1>Driver Details</h1>
+        <h1>Route Details</h1>
       </Grid>
       <Grid
         item
