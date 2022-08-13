@@ -29,16 +29,21 @@ const Adddriver = () => {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          drivername: drivername,
-          phonenumber: phonenumber,
+          name: drivername,
+          phone: phonenumber,
           cnic: cnic,
           license: license,
-          experince: experince,
+          experience: experince,
         }),
       })
         .then((res) => res.json())
         .then((resp) => console.log(resp))
         .then((err) => console.log("Error Try Block" + err));
+      setdrivername("");
+      setphonenumber("");
+      setcnic("");
+      setlicense("");
+      setexperince("");
     } catch (err) {
       console.log("Error Catch Block" + err.message);
     }
@@ -63,6 +68,7 @@ const Adddriver = () => {
           id="driver-name"
           label="Driver Name"
           variant="outlined"
+          value={drivername}
           onChange={(e) => setdrivername(e.target.value)}
         />
         <RedBar />
@@ -70,6 +76,7 @@ const Adddriver = () => {
           id="driver-phonenumber"
           label="Driver Phone Number"
           variant="outlined"
+          value={phonenumber}
           onChange={(e) => setphonenumber(e.target.value)}
         />
         <RedBar />
@@ -77,6 +84,7 @@ const Adddriver = () => {
           id="cnic"
           label="Driver CNIC"
           variant="outlined"
+          value={cnic}
           onChange={(e) => setcnic(e.target.value)}
         />
         <RedBar />
@@ -84,6 +92,7 @@ const Adddriver = () => {
           id="license"
           label="License Number"
           variant="outlined"
+          value={license}
           onChange={(e) => setlicense(e.target.value)}
         />
         <RedBar />
@@ -91,6 +100,7 @@ const Adddriver = () => {
           id="experince"
           label="Driving Experinence"
           variant="outlined"
+          value={experince}
           onChange={(e) => setexperince(e.target.value)}
         />
         <RedBar />

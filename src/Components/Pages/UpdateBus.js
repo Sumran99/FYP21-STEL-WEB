@@ -3,7 +3,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
-import { DataGrid, renderActionsCell } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import Grid from "@mui/material/Grid";
 import { TextField } from "@mui/material";
 import Switch from "@mui/material/Switch";
