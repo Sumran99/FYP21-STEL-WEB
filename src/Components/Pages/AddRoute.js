@@ -73,6 +73,7 @@ const AddRoute = () => {
           label="Route Number"
           variant="outlined"
           required="true"
+          value={routeNo}
           onChange={(e) => setRouteNo(e.target.value)}
         />
         <RedBar />
@@ -80,6 +81,7 @@ const AddRoute = () => {
           id="departure"
           label="Departure"
           variant="outlined"
+          value={departure}
           onChange={(e) => setDeparture(e.target.value)}
         />
         <RedBar />
@@ -87,14 +89,13 @@ const AddRoute = () => {
           id="arrival"
           label="Arrival"
           variant="outlined"
+          value={arrival}
           onChange={(e) => setArrival(e.target.value)}
         />
         <RedBar />
         <Button variant="outlined" onClick={handlesubmit}>
           Add Route
         </Button>
-
-        <p>{message}</p>
       </Box>
     </>
   );

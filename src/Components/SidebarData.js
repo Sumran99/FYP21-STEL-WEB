@@ -51,7 +51,7 @@ export const SidebarData = [
       },
       {
         title: "Delete Route",
-        path: "/route/deleteroute",
+        path: "/deleteroute",
         icon: <IoIcons.IoIosPaper />,
         cName: "sub-nav",
       },

@@ -12,6 +12,7 @@ import Adddriver from "./Components/Pages/Adddriver";
 import Showdriver from "./Components/Pages/Showdriver";
 import Statistics from "./Components/Pages/Statistics";
 import ShowRoute from "./Components/Pages/ShowRoute";
+import DeleteRoute from "./Components/Pages/DeleteRoute";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/driver/showdriver" element={<Showdriver />} />
           <Route exact path="/statistics" element={<Statistics />} />
           <Route exact path="/showroute" element={<ShowRoute />} />
+          <Route exact path="/deleteroute" element={<DeleteRoute />} />
         </Routes>
       </Router>
     </>

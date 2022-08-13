@@ -3,13 +3,13 @@ import Grid from "@mui/material/Grid";
 import { Box } from "@mui/system";
 import { DataGrid } from "@mui/x-data-grid";
 const columns = [
-  { field: "number", headerName: "BUs Number", width: 120 },
+  { field: "number", headerName: "Route Number", width: 120 },
   { field: "from", headerName: "From", width: 120 },
   { field: "to", headerName: "To", width: 120 },
 ];
 const ShowRoute = () => {
   const [number, setnumber] = React.useState([]);
-  const getAllDrivers = React.useCallback(async () => {
+  const getAllRoutes = React.useCallback(async () => {
     const response = await fetch(
       "https://stel-api.herokuapp.com/api/route/routes"
     );
@@ -17,17 +17,16 @@ const ShowRoute = () => {
     setnumber(data.routes);
     console.log(number);
   }, []);
-
   React.useEffect(() => {
-    getAllDrivers();
-  }, [getAllDrivers]);
+    getAllRoutes();
+  }, [getAllRoutes]);
   return (
     <>
       <Grid
         container
         direction="column"
         alignItems="center"
-        ustifyContent="center"
+        justifyContent="center"
         item
         xs={12}
       >
