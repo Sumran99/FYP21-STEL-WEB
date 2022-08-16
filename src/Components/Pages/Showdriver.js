@@ -7,7 +7,7 @@ const columns = [
   { field: "phone", headerName: "Phone No", width: 120 },
   { field: "cnic", headerName: "CNIC", width: 120 },
   { field: "license", headerName: "License No", width: 120 },
-  { field: "experience", headerName: "Experince", width: 70 },
+  { field: "experience", headerName: "Experince", width: 100 },
 ];
 
 const Showdriver = () => {
@@ -27,11 +27,27 @@ const Showdriver = () => {
   }, [driver]);
   return (
     <>
-      <Grid item xs={12}>
+      <Grid
+        justifyContent="center"
+        container
+        direction="column"
+        alignItems="center"
+        item
+        xs={12}
+      >
         <h1>Driver Details</h1>
       </Grid>
-      <Grid item xs={12}>
-        <Box sx={{ height: 400, width: "100%" }}>
+      <Grid
+        item
+        xs={12}
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: "50vh" }}
+      >
+        <Box sx={{ height: 400, width: "50%" }}>
           <DataGrid
             rows={driver}
             columns={columns}

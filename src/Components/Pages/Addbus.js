@@ -66,65 +66,66 @@ const Addbus = () => {
         autoComplete="off"
       >
         <h2>Add Bus Details</h2>
-
-        <RedBar />
-        <TextField
-          id="bus-number"
-          label="Bus Number"
-          variant="outlined"
-          value={busnumber}
-          onChange={(e) => setbusnumber(e.target.value)}
-        />
-        <RedBar />
-        <TextField
-          id="student-capacity"
-          label="Student Capacity"
-          variant="outlined"
-          value={capacity}
-          onChange={(e) => setcapacity(e.target.value)}
-        />
-        <RedBar />
-        <TextField
-          id="mileage"
-          label="Mileage"
-          variant="outlined"
-          value={mileage}
-          onChange={(e) => setmileage(e.target.value)}
-        />
-        <RedBar />
-        <TextField
-          id="chase_no"
-          label="Chase Number"
-          variant="outlined"
-          value={chase}
-          onChange={(e) => setchase(e.target.value)}
-        />
-        <RedBar />
-        <FormLabel id="demo-row-radio-buttons-group-label">Choose</FormLabel>
-        <RadioGroup
-          row
-          aria-labelledby="demo-row-radio-buttons-group-label"
-          name="row-radio-buttons-group"
-        >
-          <FormControlLabel
-            value={!ac}
-            control={<Radio />}
-            label="AC"
-            onChange={(e) => setac(!e.target.value)}
+        <form>
+          <RedBar />
+          <TextField
+            id="bus-number"
+            label="Bus Number"
+            variant="outlined"
+            value={busnumber}
+            onChange={(e) => setbusnumber(e.target.value)}
           />
-          <FormControlLabel
-            value={ac}
-            control={<Radio />}
-            label="Non AC"
-            onChange={(e) => setac(!e.target.value)}
+          <RedBar />
+          <TextField
+            id="student-capacity"
+            label="Student Capacity"
+            variant="outlined"
+            value={capacity}
+            onChange={(e) => setcapacity(e.target.value)}
           />
-        </RadioGroup>
-        <RedBar />
-        <Button variant="outlined" onClick={handlesubmit}>
-          Add Bus
-        </Button>
+          <RedBar />
+          <TextField
+            id="mileage"
+            label="Mileage"
+            variant="outlined"
+            value={mileage}
+            onChange={(e) => setmileage(e.target.value)}
+          />
+          <RedBar />
+          <TextField
+            id="chase_no"
+            label="Chase Number"
+            variant="outlined"
+            value={chase}
+            onChange={(e) => setchase(e.target.value)}
+          />
+          <RedBar />
+          <FormLabel id="demo-row-radio-buttons-group-label">Choose</FormLabel>
+          <RadioGroup
+            row
+            aria-labelledby="demo-row-radio-buttons-group-label"
+            name="row-radio-buttons-group"
+          >
+            <FormControlLabel
+              value={!ac}
+              control={<Radio />}
+              label="AC"
+              onChange={(e) => setac(!e.target.value)}
+            />
+            <FormControlLabel
+              value={ac}
+              control={<Radio />}
+              label="Non AC"
+              onChange={(e) => setac(!e.target.value)}
+            />
+          </RadioGroup>
+          <RedBar />
+          <Button variant="outlined" onClick={handlesubmit}>
+            Add Bus
+          </Button>
 
-        <p>{message}</p>
+          <p>{message}</p>
+        </form>
       </Box>
     </>
   );

@@ -42,7 +42,7 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
   const ToggleSidebar = () => {
     sidebar === true ? setSidebar(false) : setSidebar(true);
   };
@@ -56,13 +56,19 @@ const Sidebar = () => {
             <FaIcons.FaBars onClick={ToggleSidebar} />
           </NavIcon>
         </Nav>
-        <SidebarNav sidebar={sidebar} onClick={ToggleSidebar}>
+        <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to="#">
               <AiIcons.AiOutlineClose onClick={ToggleSidebar} />
             </NavIcon>
             {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
+              return (
+                <SubMenu
+                  item={item}
+                  key={index}
+                  ToggleSidebar={ToggleSidebar}
+                />
+              );
             })}
           </SidebarWrap>
         </SidebarNav>

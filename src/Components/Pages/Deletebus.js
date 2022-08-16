@@ -50,10 +50,26 @@ const Deletebus = () => {
   }, [buses, getAllBuses]);
   return (
     <>
-      <Grid item xs={12}>
+      <Grid
+        item
+        xs={12}
+        justifyContent="center"
+        container
+        direction="column"
+        alignItems="center"
+      >
         <h1>Delete Bus Panel</h1>
       </Grid>
-      <Grid item xs={12}>
+      <Grid
+        item
+        xs={12}
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: "50vh" }}
+      >
         <Box sx={{ height: 400, width: "52%" }}>
           <DataGrid
             pageSize={5}
@@ -76,6 +92,8 @@ const Deletebus = () => {
       </Grid>
       <Button
         variant="outlined"
+        margin-left="50%"
+        margin-top="50%"
         startIcon={<DeleteIcon />}
         onClick={handledelete}
       >

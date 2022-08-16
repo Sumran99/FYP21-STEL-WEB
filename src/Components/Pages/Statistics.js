@@ -21,7 +21,7 @@ function RedBar() {
 }
 const data = [
   {
-    name: "January",
+    name: "Jan",
     uv: 4000,
     pv: 2400,
     amt: 2400,
@@ -49,6 +49,12 @@ const data = [
     uv: 1890,
     pv: 4800,
     amt: 2181,
+  },
+  {
+    name: "DEC",
+    uv: 1891,
+    pv: 4801,
+    amt: 2182,
   },
 ];
 
