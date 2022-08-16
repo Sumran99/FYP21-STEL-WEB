@@ -36,6 +36,7 @@ const DropdownLink = styled(Link)`
     background: #632ce4;
     cursor: pointer;
   }
+  
 `;
 
 const SubMenu = ({ item }, { ToggleSidebar }) => {

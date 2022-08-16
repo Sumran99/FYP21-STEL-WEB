@@ -24,6 +24,8 @@ const Addbus = () => {
   const [chase, setchase] = React.useState("");
   const [ac, setac] = React.useState(false);
   const [message, setmessage] = React.useState("");
+  const [errorNo, setErrorNo] = React.useState("");
+  const [capacityError, setCapacityError] = React.useState("");
   let handlesubmit = async (e) => {
     try {
       await fetch("https://stel-api.herokuapp.com/api/bus/addBus", {
@@ -52,6 +54,32 @@ const Addbus = () => {
       console.log("Error Catch Block" + err.message);
     }
   };
+
+  const handleBusNumber = (e)=>{
+    const newValue = e.target.value;
+
+  if (!newValue.match(/[^0-9a-zA-Z]+/ig)) {
+    setErrorNo("");
+  } else {
+    setErrorNo("Enter only numbers and alphabets");
+  }
+
+  setbusnumber(newValue);
+
+  };
+  const handleCapacity = (e)=>{
+    const newValue = e.target.value;
+
+    if (!newValue.match(/[^0-9]+/ig)) {
+      setCapacityError("");
+    } else {
+      setCapacityError("Enter only numbers");
+    }
+  
+
+  setcapacity(newValue);
+  }
+
   return (
     <>
       <Box
@@ -66,14 +94,17 @@ const Addbus = () => {
         autoComplete="off"
       >
         <h2>Add Bus Details</h2>
-        <form>
           <RedBar />
+          <form>
           <TextField
             id="bus-number"
             label="Bus Number"
             variant="outlined"
             value={busnumber}
-            onChange={(e) => setbusnumber(e.target.value)}
+            onChange={handleBusNumber}
+            helperText={errorNo}
+            error={!!errorNo }
+            required
           />
           <RedBar />
           <TextField
@@ -81,7 +112,11 @@ const Addbus = () => {
             label="Student Capacity"
             variant="outlined"
             value={capacity}
-            onChange={(e) => setcapacity(e.target.value)}
+            onChange={handleCapacity}
+            helperText={capacityError}
+            error={!!capacityError }
+            required
+            
           />
           <RedBar />
           <TextField
@@ -90,6 +125,7 @@ const Addbus = () => {
             variant="outlined"
             value={mileage}
             onChange={(e) => setmileage(e.target.value)}
+            required
           />
           <RedBar />
           <TextField
@@ -98,6 +134,7 @@ const Addbus = () => {
             variant="outlined"
             value={chase}
             onChange={(e) => setchase(e.target.value)}
+            required
           />
           <RedBar />
           <FormLabel id="demo-row-radio-buttons-group-label">Choose</FormLabel>
@@ -120,7 +157,7 @@ const Addbus = () => {
             />
           </RadioGroup>
           <RedBar />
-          <Button variant="outlined" onClick={handlesubmit}>
+          <Button type="submit" variant="outlined" onClick={handlesubmit}>
             Add Bus
           </Button>
 
