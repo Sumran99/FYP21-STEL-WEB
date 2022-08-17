@@ -33,7 +33,7 @@ const SidebarNav = styled.nav`
   position: fixed;
   top: 0;
   left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-  transition: 350ms;
+  transition: 250ms;
   z-index: 10;
 `;
 
@@ -66,7 +66,7 @@ const Sidebar = () => {
                 <SubMenu
                   item={item}
                   key={index}
-                  ToggleSidebar={ToggleSidebar}
+                  
                 />
               );
             })}
